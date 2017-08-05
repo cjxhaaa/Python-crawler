@@ -23,6 +23,10 @@ class DmozSpider(scrapy.Spider):
 	# 生成需要进一步处理的URL的 Request 对象。
 	def parse(self,response):
 		# Response 对象将会作为唯一的参数传递给该函数。 
-		filename = response.url.split('/')[-2]
-		with open(filename,'wb') as f:
-			f.write(response.body)
+		# filename = response.url.split('/')[-2]
+		# with open(filename,'wb') as f:
+		# 	f.write(response.body)
+		for sel in response.xpath('//ul/li'):
+			title = sel.xpath('a/text()').extract()
+			link = sel.xpath('a/@href').extract()
+			desc = sel.xpath('text()').extract()
