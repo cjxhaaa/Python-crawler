@@ -31,21 +31,27 @@ def get_data(url):
 	article_content = soup.find('div',id='content')
 	if article_content is None:
 		datas['content'] = '无正文'
-	data['content'] = article_content.get_text()
+	data['content'] = article_content.get_text('\r\n    ',strip=True)
 	return data
 
 def write_book(url):
 	with open('book.txt','w',encoding='utf-8') as b:
 		n = 0
+		delete1 = 'chaptererror();'
+		delete2 = '最新全本：、、、、、、、、、、'
+		delete3 = '欢迎广大书友光临阅读，最新、最快、最全的全本小说尽在！&amp;lt;/a&amp;gt;'
+		delete4 = 'target=”_blank”></a>"target="_blank"></a></a></a>'
+		delete5 = '&amp;lt;ahref=;gt;target=”_bla="_blank">”</a></a>target=”_bla="_blank"></a>”</a>'
 		for x in get_url(url):
 			n += 1
 			data = get_data(x)
 			title = data['title']
 			b.write(title)
-			content = data['content']
+			b.write('\r\n    ')
+			content = data['content'].rstrip(delete1).rstrip().rstrip(delete2).rstrip().rstrip(delete3).rstrip().rstrip(delete4).rstrip().rstrip(delete5)
 			b.write(content)
+			b.write('\r\n')
 			print('第{}章爬取完成'.format(n))
-
 
 if __name__ == '__main__':
 	write_book(url)
