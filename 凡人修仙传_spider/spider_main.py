@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
 
-url = 'http://www.dingdiann.com/ddk6728/'
 def get_html(url):
 	r = requests.get(url)
 	r.encoding = 'utf8'
@@ -42,7 +41,8 @@ def write_book(url):
 		delete3 = '欢迎广大书友光临阅读，最新、最快、最全的全本小说尽在！&amp;lt;/a&amp;gt;'
 		delete4 = 'target=”_blank”></a>"target="_blank"></a></a></a>'
 		delete5 = '&amp;lt;ahref=;gt;target=”_bla="_blank">”</a></a>target=”_bla="_blank"></a>”</a>'
-		for x in get_url(url):
+		all_url = get_url(url)
+		for x in all_url:
 			n += 1
 			data = get_data(x)
 			title = data['title']
@@ -54,4 +54,5 @@ def write_book(url):
 			print('第{}章爬取完成'.format(n))
 
 if __name__ == '__main__':
+	url = 'http://www.dingdiann.com/ddk6728/'
 	write_book(url)
