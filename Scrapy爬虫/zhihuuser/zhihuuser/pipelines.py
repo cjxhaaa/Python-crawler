@@ -6,6 +6,8 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-class ZhihuuserPipeline(object):
+class MongoPipeline(object):
+
+
     def process_item(self, item, spider):
         return item
