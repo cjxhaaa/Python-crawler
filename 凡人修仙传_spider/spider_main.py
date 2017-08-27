@@ -26,7 +26,6 @@ def get_data(url):
 	if article_title is None:
 		datas['title'] = '无标题'
 	data['title'] = article_title.get_text() 
-
 	article_content = soup.find('div',id='content')
 	if article_content is None:
 		datas['content'] = '无正文'
