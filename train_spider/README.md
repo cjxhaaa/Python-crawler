@@ -14,13 +14,13 @@
 
 1.普通查询
 
-<img alt="" src="http://ouiffqj3p.bkt.clouddn.com/train20170909a.png" width="80%">
+<img alt="" src="http://ouiffqj3p.bkt.clouddn.com/train20170909a.png" width="50%">
 
-<img alt="" src="http://ouiffqj3p.bkt.clouddn.com/train20170909b.png" width="80%">
+<img alt="" src="http://ouiffqj3p.bkt.clouddn.com/train20170909b.png" width="50%">
  
 2.按车型查询
  
-<img alt="" src="http://ouiffqj3p.bkt.clouddn.com/train20170909c.png" width="80%">
+<img alt="" src="http://ouiffqj3p.bkt.clouddn.com/train20170909c.png" width="50%">
  
-<img alt="" src="http://ouiffqj3p.bkt.clouddn.com/train20170909d.png" width="80%">
+<img alt="" src="http://ouiffqj3p.bkt.clouddn.com/train20170909d.png" width="50%">
 
