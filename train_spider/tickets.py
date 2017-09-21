@@ -48,7 +48,7 @@ class SearchTickets(object):
         
 
     def __parse_text(self,text):
-        args = str(text).split(' ')
+        args = str(text).lstrip('查车票').strip().split(' ')
         if len(args) == 3:
             try:
                 if len(args[2]) == 8:

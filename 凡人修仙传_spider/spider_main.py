@@ -24,11 +24,11 @@ def get_data(url):
 	data = dict()
 	article_title = soup.find('div',class_='bookname').find('h1')
 	if article_title is None:
-		datas['title'] = '无标题'
+		data['title'] = '无标题'
 	data['title'] = article_title.get_text() 
 	article_content = soup.find('div',id='content')
 	if article_content is None:
-		datas['content'] = '无正文'
+		data['content'] = '无正文'
 	data['content'] = article_content.get_text('\r\n    ',strip=True)
 	return data
 
