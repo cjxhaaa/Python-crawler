@@ -14,6 +14,7 @@ def get_token():
     response = requests.get(url,cookies=cookies)
     # token = re.search(r'token=\d+',response.url).group()
     # print(token)
+    print(response.url)
     token = re.findall(r'token=(\d+)',response.url)[0]
     return token
 
